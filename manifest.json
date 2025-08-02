@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Applies Counter",
+  "version": "1.0",
+  "description": "Shows the number of applications for a job offer on LinkedIn.",
+  "permissions": [
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://*.linkedin.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injector.js"],
+      "matches": ["*://*.linkedin.com/*"]
+    }
+  ]
+}
