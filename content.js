@@ -21,7 +21,7 @@ window.addEventListener('message', function(event) {
       appliesElement.id = 'linkedin-applies-counter';
       document.body.appendChild(appliesElement);
     }
-    appliesElement.textContent = `Numero di candidature: ${applies}`;
+    appliesElement.textContent = `Number of applications: ${applies}`;
     console.log('Applies element updated.');
   }
 });
