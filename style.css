@@ -1,14 +1,8 @@
-#linkedin-applies-counter {
-  position: fixed;
-  top: 50px;
-  right: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  z-index: 9999;
-  font-family: sans-serif;
-  font-size: 14px;
-  color: #333;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+#linkedin-applies-counter .job-insights-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+#linkedin-applies-counter .job-insights-item {
+  margin-bottom: 0.25rem;
 }

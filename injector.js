@@ -1,43 +1,30 @@
+const API_URL = 'https://www.linkedin.com/voyager/api/jobs/jobPostings/';
 (function() {
-  console.log('Injector script injected and running.');
   const originalOpen = XMLHttpRequest.prototype.open;
   XMLHttpRequest.prototype.open = function() {
-    console.log('XHR open called for:', arguments[1]);
-    this.addEventListener('load', function() {
-      if (this.responseURL.startsWith('https://www.linkedin.com/voyager/api/jobs/jobPostings/')) {
+    this.addEventListener('load', async function() {
+      if (this.responseURL.startsWith(API_URL)) {
         console.log('Intercepted LinkedIn jobs API call:', this.responseURL);
         try {
           let response;
-          if (this.responseType === 'json') {
-            response = this.response;
-          } else if (this.response instanceof Blob) {
-            this.response.text().then(text => {
-              response = JSON.parse(text);
-              if (response && response.data && response.data.applies !== undefined) {
-                console.log('Found applies data:', response.data.applies);
-                window.postMessage({ type: 'FROM_INJECTOR', applies: response.data.applies }, '*');
-              } else {
-                console.log('Applies data not found in the response.');
-              }
-            }).catch(err => {
-              console.error('Error reading Blob response:', err);
-            });
-            return;
-          } else if (this.responseText) {
-            response = JSON.parse(this.responseText);
-          }
-
-          if (response && response.data && response.data.applies !== undefined) {
-            console.log('Found applies data:', response.data.applies);
-            window.postMessage({ type: 'FROM_INJECTOR', applies: response.data.applies }, '*');
+          if (this.response instanceof Blob) {
+            const text = await this.response.text();
+            response = JSON.parse(text);
           } else {
-            console.log('Applies data not found in the response.');
+            response = typeof this.response === 'string' ? JSON.parse(this.response) : this.response;
+          }
+          
+          if (response && response.data) {
+            window.postMessage({ 
+              type: 'LINKEDIN_APPLIES_DATA',
+              data: response
+            }, '*');
+          } else {
+            console.warn('Applies data not found in the response.');
           }
         } catch (e) {
-          console.error('Errore nel parsing della risposta JSON:', e);
-          console.error('Response URL:', this.responseURL);
-          console.error('Response Type:', this.responseType);
-          console.log('Response:', this.response);
+          console.error('Something went wrong on injector.js:', e);
+          console.error('Response:', this.response);
         }
       }
     });
