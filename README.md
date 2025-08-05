@@ -5,6 +5,9 @@
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 
+<img width="601" height="633" alt="Pasted image (4)" src="https://github.com/user-attachments/assets/8428602e-51f6-49b7-8a1b-4939a91f063d" />
+
+
 ## Features
 
 ### **Application insights**
@@ -24,10 +27,6 @@
 ### **Job details**
 - **Experience level required**: Entry, Mid, Senior level positions
 - **Employment type**: Full-time, Part-time, Contract, Internship
-
-## Screenshots
-
-
 
 ## Installation
 
