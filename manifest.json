@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "LinkedIn Job Insights",
   "version": "1.0.0",
-  "description": "This extension shows insights and data that are not normally visible on LinkedIn job applications.",
+  "description": "This extension shows insights and data that are not usually visible on LinkedIn job applications.",
   "permissions": [
     "webRequest"
   ],

@@ -1,7 +1,7 @@
 {
   "name": "linkedin-job-insights",
   "version": "1.0.0",
-  "description": "This extension shows insights and data that are not normally visible on LinkedIn job applications.",
+  "description": "This extension shows insights and data that are not usually visible on LinkedIn job applications.",
   "main": "dist/content.js",
   "scripts": {
     "build": "webpack --mode=production",
