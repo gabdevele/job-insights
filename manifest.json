@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Applies Counter",
-  "version": "1.0",
-  "description": "Shows the number of applications for a job offer on LinkedIn.",
+  "name": "LinkedIn Job Insights",
+  "version": "1.0.0",
+  "description": "This extension shows insights and data that are not normally visible on LinkedIn job applications.",
   "permissions": [
     "webRequest"
   ],
@@ -12,14 +12,15 @@
   "content_scripts": [
     {
       "matches": ["*://*.linkedin.com/*"],
-      "js": ["content.js"],
-      "css": ["style.css"]
-    }
-  ],
-  "web_accessible_resources": [
+      "js": ["injector.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
     {
-      "resources": ["injector.js"],
-      "matches": ["*://*.linkedin.com/*"]
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
     }
   ]
 }

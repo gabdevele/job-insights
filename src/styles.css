@@ -33,11 +33,6 @@
   gap: 8px;
 }
 
-.job-insights-title::before {
-  content: '📊';
-  font-size: 1.1rem;
-}
-
 .job-insights-list {
   display: grid;
   gap: 12px;
@@ -77,34 +72,6 @@
   font-weight: 600;
   color: #1e293b;
   text-align: right;
-}
-
-.job-insights-item[data-type="applications"] .job-insights-label::before {
-  content: '👥';
-}
-
-.job-insights-item[data-type="experience"] .job-insights-label::before {
-  content: '🎯';
-}
-
-.job-insights-item[data-type="employment"] .job-insights-label::before {
-  content: '💼';
-}
-
-.job-insights-item[data-type="posted"] .job-insights-label::before {
-  content: '📅';
-}
-
-.job-insights-item[data-type="expires"] .job-insights-label::before {
-  content: '⏰';
-}
-
-.job-insights-item[data-type="company"] .job-insights-label::before {
-  content: '🏢';
-}
-
-.job-insights-item[data-type="remote"] .job-insights-label::before {
-  content: '🌐';
 }
 
 .competition-indicator {
@@ -251,4 +218,37 @@
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+
+.job-insights-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.developer-credit {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.developer-link {
+  color: #0073b1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.developer-link:hover {
+  color: #004182;
+  background-color: #f0f9ff;
+  text-decoration: none;
+}
+
+.developer-link:focus {
+  outline: 2px solid #0073b1;
+  outline-offset: 2px;
 }
